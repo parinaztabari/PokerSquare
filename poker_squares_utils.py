@@ -229,7 +229,7 @@ class GameSimulator:
 if __name__ == '__main__':
   num_simulation=100
   parameters={'point_system_object':PointSystem(),
-              'poker_square_player_class':PMCTSPlayer,
+              'poker_square_player_class':RandomPlayer,
               'verbose':True,
               'timeout_second':100,
               'predefined_score':-1,
