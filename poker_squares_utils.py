@@ -1,4 +1,3 @@
-# python: 3.7.9
 import random
 from statistics import mean,stdev
 import time
@@ -227,11 +226,11 @@ class GameSimulator:
         return score,remaining_time
 
 if __name__ == '__main__':
-  num_simulation=100
+  num_simulation=1
   parameters={'point_system_object':PointSystem(),
-              'poker_square_player_class':RandomPlayer,
+              'poker_square_player_class':PMCTSPlayer,
               'verbose':True,
-              'timeout_second':100,
+              'timeout_second':10000,
               'predefined_score':-1,
               'consider_instance_creation_time':True,
               'random_state':None
@@ -254,18 +253,3 @@ if __name__ == '__main__':
     simulation_rem_time_results.append(rem_time)
   # endregion
   print(f"\n{parameters['point_system_object'].point_system_name} score | avg{f' ± stdev'if len(simulation_score_results)>1 else ''}: {mean(simulation_score_results):.2f}{f' ± {stdev(simulation_score_results):.2f}'if len(simulation_score_results)>1 else ''} ,min score: {min(simulation_score_results)}, max score: {max(simulation_score_results)}")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
